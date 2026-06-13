@@ -1,0 +1,50 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b0b"/>
+      <stop offset="0.5" stop-color="#202020"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#fff" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <g fill="none" stroke="#fff" stroke-opacity="0.18">
+    <path d="M140 172H1060M140 258H1060M140 344H1060M140 430H1060M140 516H1060M140 602H1060M140 688H1060"/>
+    <path d="M140 172V688M338 172V688M536 172V688M734 172V688M932 172V688M1060 172V688"/>
+  </g>
+  <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff">
+    <text x="110" y="96" font-size="24" opacity="0.76">SETTLEMENT FLOW</text>
+    <text x="110" y="132" font-size="13" opacity="0.42">BETTING LEDGER / PAYOUT CHECK / REPORT OUTPUT</text>
+  </g>
+  <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff" font-size="14">
+    <text x="164" y="224" opacity="0.62">ORDER</text>
+    <text x="366" y="224" opacity="0.62">ODDS</text>
+    <text x="562" y="224" opacity="0.62">RESULT</text>
+    <text x="760" y="224" opacity="0.62">PAYOUT</text>
+    <text x="958" y="224" opacity="0.62">STATUS</text>
+    <text x="164" y="310" opacity="0.35">#A19-4402</text>
+    <text x="366" y="310" opacity="0.35">1.92</text>
+    <text x="562" y="310" opacity="0.35">MATCH</text>
+    <text x="760" y="310" opacity="0.35">OK</text>
+    <text x="958" y="310" opacity="0.35">SYNCED</text>
+    <text x="164" y="396" opacity="0.35">#B08-1937</text>
+    <text x="366" y="396" opacity="0.35">2.46</text>
+    <text x="562" y="396" opacity="0.35">REVIEW</text>
+    <text x="760" y="396" opacity="0.35">HOLD</text>
+    <text x="958" y="396" opacity="0.72">FLAG</text>
+    <text x="164" y="482" opacity="0.35">#C77-9011</text>
+    <text x="366" y="482" opacity="0.35">1.18</text>
+    <text x="562" y="482" opacity="0.35">MATCH</text>
+    <text x="760" y="482" opacity="0.35">OK</text>
+    <text x="958" y="482" opacity="0.35">SYNCED</text>
+  </g>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M185 758C320 710 430 815 565 762S770 640 1010 704" stroke-opacity="0.45" stroke-width="3"/>
+    <path d="M185 802C342 748 438 850 604 790S810 692 1030 735" stroke-opacity="0.18" stroke-width="2"/>
+  </g>
+  <rect x="725" y="642" width="300" height="74" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.16"/>
+  <text x="752" y="688" font-family="JetBrains Mono, Consolas, monospace" font-size="16" fill="#fff" opacity="0.64">AUTO REPORT READY</text>
+</svg>

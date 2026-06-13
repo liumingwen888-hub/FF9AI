@@ -1,0 +1,55 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="0.52" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="54%" cy="45%" r="58%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M180 560C320 450 390 620 520 500S760 255 1025 305" stroke-opacity="0.78" stroke-width="3"/>
+    <path d="M160 420C290 355 398 438 520 370S756 160 1040 205" stroke-opacity="0.28" stroke-width="2"/>
+    <path d="M190 650C330 548 438 700 570 585S785 410 1010 455" stroke-opacity="0.2" stroke-width="2"/>
+  </g>
+  <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff">
+    <text x="88" y="104" font-size="22" opacity="0.74">RISK OPERATIONS</text>
+    <text x="88" y="138" font-size="13" opacity="0.42">BET SLIP STREAM / ANOMALY REVIEW</text>
+    <text x="916" y="96" font-size="12" opacity="0.46">LIVE MONITOR</text>
+  </g>
+  <g>
+    <rect x="82" y="186" width="300" height="168" fill="#fff" fill-opacity="0.055" stroke="#fff" stroke-opacity="0.16"/>
+    <rect x="418" y="176" width="332" height="214" fill="#fff" fill-opacity="0.035" stroke="#fff" stroke-opacity="0.12"/>
+    <rect x="790" y="166" width="322" height="188" fill="#fff" fill-opacity="0.05" stroke="#fff" stroke-opacity="0.14"/>
+    <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff" font-size="14">
+      <text x="112" y="226" opacity="0.72">FLAGGED SLIPS</text>
+      <text x="112" y="270" opacity="0.36">ODDS SWING</text>
+      <text x="112" y="302" opacity="0.36">ACCOUNT LINK</text>
+      <text x="112" y="334" opacity="0.36">LIMIT BREACH</text>
+      <text x="448" y="218" opacity="0.72">AI REVIEW QUEUE</text>
+      <text x="448" y="266" opacity="0.36">MATCH RULES</text>
+      <text x="448" y="298" opacity="0.36">SCORE RISK</text>
+      <text x="448" y="330" opacity="0.36">WRITE EVIDENCE</text>
+      <text x="820" y="208" opacity="0.72">HUMAN CONFIRM</text>
+      <text x="820" y="252" opacity="0.36">APPROVE</text>
+      <text x="820" y="284" opacity="0.36">REJECT</text>
+      <text x="820" y="316" opacity="0.36">ESCALATE</text>
+    </g>
+  </g>
+  <g fill="#fff">
+    <circle cx="180" cy="560" r="8" opacity="0.8"/>
+    <circle cx="520" cy="500" r="10" opacity="0.9"/>
+    <circle cx="760" cy="255" r="7" opacity="0.72"/>
+    <circle cx="1025" cy="305" r="9" opacity="0.82"/>
+  </g>
+</svg>
