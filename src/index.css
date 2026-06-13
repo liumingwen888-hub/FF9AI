@@ -171,6 +171,8 @@
     transform-origin: left;
     z-index: 100;
     pointer-events: none;
+    overflow: hidden;
+    will-change: transform;
   }
 
   .fullscreen-menu.open {
@@ -203,26 +205,10 @@
     clip-path: inset(0% 0% 0% 0%);
   }
 
-  @keyframes slideInRight {
-    0% {
-      transform: translate3d(0, 0, 0) scaleX(1);
-    }
-    50% {
-      transform: translate3d(50vw, 0, 0) scaleX(1.8);
-    }
-    100% {
-      transform: translate3d(100vw, 0, 0) scaleX(1);
-    }
-  }
-
   body.menu-open .header {
     color: #fff;
     mix-blend-mode: normal;
     transition: color 0.1s ease 0.7s;
-  }
-
-  body.menu-open .page-container {
-    transform: none;
   }
 }
 

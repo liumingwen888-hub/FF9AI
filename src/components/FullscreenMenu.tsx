@@ -20,75 +20,128 @@ export default function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLAnchorElement[]>([]);
-  const tlRef = useRef<gsap.core.Timeline | null>(null);
+  const animationRef = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const menu = menuRef.current;
     const wrapper = wrapperRef.current;
+    const items = [...itemsRef.current];
     if (!menu || !wrapper) return;
 
-    const tl = gsap.timeline({ paused: true });
-
-    tl.to(menu, {
-      scaleX: 1,
-      duration: 0.8,
-      ease: 'elastic.out(1, 0.5)',
+    gsap.set(menu, {
+      scaleX: 0,
+      pointerEvents: 'none',
       transformOrigin: 'left',
     });
-
-    tl.to(
-      wrapper,
-      {
-        clipPath: 'inset(0% 0% 0% 0%)',
-        duration: 0.6,
-        ease: 'power2.inOut',
-        transformOrigin: 'left',
-      },
-      0.3
-    );
-
-    itemsRef.current.forEach((item, index) => {
-      if (!item) return;
-
-      tl.fromTo(
-        item,
-        {
-          y: 36,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: 'power3.out',
-        },
-        0.3 + index * 0.05
-      );
+    gsap.set(wrapper, {
+      clipPath: 'inset(0% 100% 0% 0%)',
+      transformOrigin: 'left',
+    });
+    gsap.set(items, {
+      y: 36,
+      opacity: 0,
     });
 
-    tlRef.current = tl;
-
     return () => {
-      tl.kill();
+      animationRef.current?.kill();
+      gsap.killTweensOf([menu, wrapper, ...items]);
+      document.body.classList.remove('menu-open');
     };
   }, []);
 
   useEffect(() => {
     const menu = menuRef.current;
     const wrapper = wrapperRef.current;
-    if (!menu || !wrapper || !tlRef.current) return;
+    if (!menu || !wrapper) return;
+
+    animationRef.current?.kill();
+    gsap.killTweensOf([menu, wrapper, ...itemsRef.current]);
 
     if (open) {
       menu.classList.add('open');
       wrapper.classList.add('open');
       document.body.classList.add('menu-open');
-      tlRef.current.play();
+      gsap.set(menu, {
+        pointerEvents: 'auto',
+        transformOrigin: 'left',
+      });
+
+      const tl = gsap.timeline();
+      animationRef.current = tl;
+      tl.to(menu, {
+        scaleX: 1,
+        duration: 0.75,
+        ease: 'expo.out',
+      });
+      tl.to(
+        wrapper,
+        {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        0.18
+      );
+      tl.to(
+        itemsRef.current,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.42,
+          ease: 'power3.out',
+          stagger: 0.045,
+        },
+        0.28
+      );
     } else {
       document.body.classList.remove('menu-open');
-      tlRef.current.reverse().then(() => {
-        menu.classList.remove('open');
-        wrapper.classList.remove('open');
+
+      const tl = gsap.timeline({
+        defaults: { ease: 'power2.inOut' },
+        onComplete: () => {
+          if (animationRef.current !== tl) return;
+
+          menu.classList.remove('open');
+          wrapper.classList.remove('open');
+          gsap.set(menu, {
+            scaleX: 0,
+            pointerEvents: 'none',
+          });
+          gsap.set(wrapper, {
+            clipPath: 'inset(0% 100% 0% 0%)',
+          });
+          gsap.set(itemsRef.current, {
+            y: 36,
+            opacity: 0,
+          });
+          animationRef.current = null;
+        },
       });
+      animationRef.current = tl;
+
+      tl.to(itemsRef.current, {
+        y: 18,
+        opacity: 0,
+        duration: 0.18,
+        stagger: 0.015,
+      });
+      tl.to(
+        wrapper,
+        {
+          clipPath: 'inset(0% 100% 0% 0%)',
+          duration: 0.22,
+        },
+        0
+      );
+      tl.to(
+        menu,
+        {
+          scaleX: 0,
+          duration: 0.32,
+          ease: 'expo.inOut',
+        },
+        0.08
+      );
     }
   }, [open]);
 

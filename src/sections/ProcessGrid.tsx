@@ -47,6 +47,8 @@ export default function ProcessGrid() {
   useEffect(() => {
     const section = sectionRef.current;
     const grid = gridRef.current;
+    const title = titleRef.current;
+    const animatedItems = [...itemRefs.current];
     if (!section || !grid) return;
 
     const triggers: ScrollTrigger[] = [];
@@ -79,9 +81,9 @@ export default function ProcessGrid() {
     });
     triggers.push(st);
 
-    if (titleRef.current) {
+    if (title) {
       gsap.fromTo(
-        titleRef.current,
+        title,
         { opacity: 0.55, y: 24 },
         {
           opacity: 1,
@@ -89,7 +91,7 @@ export default function ProcessGrid() {
           duration: 0.55,
           ease: 'power2.out',
           scrollTrigger: {
-            trigger: titleRef.current,
+            trigger: title,
             start: 'top 80%',
             toggleActions: 'play none none reverse',
           },
@@ -120,7 +122,11 @@ export default function ProcessGrid() {
     return () => {
       triggers.forEach((t) => t.kill());
       ScrollTrigger.getAll().forEach((t) => {
-        if (t.trigger === section || t.trigger === titleRef.current) {
+        if (
+          t.trigger === section ||
+          t.trigger === title ||
+          animatedItems.includes(t.trigger as HTMLDivElement)
+        ) {
           t.kill();
         }
       });
