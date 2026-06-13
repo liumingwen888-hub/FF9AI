@@ -22,29 +22,10 @@
     <path d="M160 420C290 355 398 438 520 370S756 160 1040 205" stroke-opacity="0.28" stroke-width="2"/>
     <path d="M190 650C330 548 438 700 570 585S785 410 1010 455" stroke-opacity="0.2" stroke-width="2"/>
   </g>
-  <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff">
-    <text x="88" y="104" font-size="22" opacity="0.74">RISK OPERATIONS</text>
-    <text x="88" y="138" font-size="13" opacity="0.42">BET SLIP STREAM / ANOMALY REVIEW</text>
-    <text x="916" y="96" font-size="12" opacity="0.46">LIVE MONITOR</text>
-  </g>
   <g>
     <rect x="82" y="186" width="300" height="168" fill="#fff" fill-opacity="0.055" stroke="#fff" stroke-opacity="0.16"/>
     <rect x="418" y="176" width="332" height="214" fill="#fff" fill-opacity="0.035" stroke="#fff" stroke-opacity="0.12"/>
     <rect x="790" y="166" width="322" height="188" fill="#fff" fill-opacity="0.05" stroke="#fff" stroke-opacity="0.14"/>
-    <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff" font-size="14">
-      <text x="112" y="226" opacity="0.72">FLAGGED SLIPS</text>
-      <text x="112" y="270" opacity="0.36">ODDS SWING</text>
-      <text x="112" y="302" opacity="0.36">ACCOUNT LINK</text>
-      <text x="112" y="334" opacity="0.36">LIMIT BREACH</text>
-      <text x="448" y="218" opacity="0.72">AI REVIEW QUEUE</text>
-      <text x="448" y="266" opacity="0.36">MATCH RULES</text>
-      <text x="448" y="298" opacity="0.36">SCORE RISK</text>
-      <text x="448" y="330" opacity="0.36">WRITE EVIDENCE</text>
-      <text x="820" y="208" opacity="0.72">HUMAN CONFIRM</text>
-      <text x="820" y="252" opacity="0.36">APPROVE</text>
-      <text x="820" y="284" opacity="0.36">REJECT</text>
-      <text x="820" y="316" opacity="0.36">ESCALATE</text>
-    </g>
   </g>
   <g fill="#fff">
     <circle cx="180" cy="560" r="8" opacity="0.8"/>

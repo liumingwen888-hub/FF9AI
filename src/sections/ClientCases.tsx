@@ -7,24 +7,24 @@ gsap.registerPlugin(ScrollTrigger);
 const cases = [
   {
     image: '/gaming-risk-ops.svg',
-    label: '风控 / 注单审核',
-    title: '异常注单先由 AI 自动筛出',
-    stat: '6 小时 → 30 分钟',
-    desc: '接入注单、赔率变化、账户行为和风控规则后，AI 先标记高风险记录、生成证据说明，再交给风控人员复核。',
+    label: '东南亚博彩 / 风控审核',
+    title: '异常投注与套利风险自动预警',
+    stat: '分钟级识别',
+    desc: '整合注单、赔率波动、设备/IP、代理层级和账户行为，自动标记高风险记录，输出可复核证据链。',
   },
   {
     image: '/gaming-settlement-flow.svg',
-    label: '结算 / 账务核对',
-    title: '派奖、流水和报表自动核对',
-    stat: '差异自动标记',
-    desc: '把投注记录、赛果、派奖流水和财务报表串起来，自动核对差异，输出每日异常清单和复核说明。',
+    label: '东南亚博彩 / 结算对账',
+    title: '派奖流水、赛果和报表自动核对',
+    stat: '差异自动成单',
+    desc: '对接投注记录、赛果、派奖流水和财务报表，自动找差异、生成异常清单，减少人工逐笔核对。',
   },
   {
     image: '/gaming-player-signals.svg',
-    label: '运营 / 行为信号',
-    title: '玩家行为信号自动整理',
+    label: '东南亚博彩 / 运营信号',
+    title: '玩家行为与优惠风险自动整理',
     stat: '2 小时 → 5 分钟',
-    desc: '自动整理登录、投注、优惠、充值提现等行为信号，辅助识别套利、薅羊毛、沉默流失和需要人工跟进的用户。',
+    desc: '分析登录、投注、充值提现、优惠领取等行为，辅助识别套利、薅羊毛、沉默流失和人工跟进对象。',
   },
 ];
 
@@ -62,9 +62,9 @@ export default function ClientCases() {
       style={{ padding: '20vh 0' }}
     >
       <div className="section-padding mb-12">
-        <div className="text-label mb-4">[ 博彩内部自动化场景 / 05 ]</div>
+        <div className="text-label mb-4">[ 东南亚博彩后台自动化 / 05 ]</div>
         <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)' }}>
-          先从风控、结算、运营这些重复流程开始
+          先从风控、结算、运营这些高频后台流程开始
         </h2>
       </div>
 
@@ -86,9 +86,9 @@ export default function ClientCases() {
                 style={{ filter: 'grayscale(100%) contrast(1.08)' }}
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <div className="mono text-label mb-2" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '11px' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="mono text-label mb-2" style={{ color: 'rgba(255,255,255,0.68)', fontSize: '11px' }}>
                   {item.label}
                 </div>
                 <div className="text-white text-lg mb-2" style={{ fontWeight: 500 }}>
@@ -97,7 +97,7 @@ export default function ClientCases() {
                 <div className="text-white/90 text-sm mb-2" style={{ fontWeight: 600 }}>
                   {item.stat}
                 </div>
-                <div className="text-white/70 text-sm" style={{ lineHeight: 1.5 }}>
+                <div className="text-white/75 text-sm" style={{ lineHeight: 1.55 }}>
                   {item.desc}
                 </div>
               </div>
@@ -114,15 +114,15 @@ export default function ClientCases() {
                 AI 先处理重复判断，人负责关键复核
               </h3>
               <p style={{ color: '#666', lineHeight: 1.7 }}>
-                博彩后台的风控和结算不适合完全黑箱决策。更稳的方式是：AI 先识别、整理、生成证据和建议，关键结果仍由负责人确认。
+                博彩后台的风控、结算和运营不适合完全黑箱决策。更稳的方式是：AI 先识别、整理、生成证据和建议，关键结果仍由负责人确认。
               </p>
             </div>
             <div>
               <h3 className="text-2xl mb-4" style={{ fontWeight: 400 }}>
-                第一次沟通不用开放系统权限
+                适配多语言、多币种、多盘口团队
               </h3>
               <p style={{ color: '#666', lineHeight: 1.7 }}>
-                你只需要说清楚一条后台流程，再准备一份脱敏样本。我们先判断能不能自动化、值不值得做，再讨论系统接入和部署方式。
+                面向东南亚博彩运营常见的跨市场后台流程：代理体系、玩家分层、充值提现、优惠活动、赛果结算和风控复核，都可以先从脱敏样本评估。
               </p>
             </div>
           </div>

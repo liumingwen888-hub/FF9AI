@@ -26,19 +26,7 @@
     <circle cx="560" cy="760" r="8" opacity="0.52"/>
     <circle cx="310" cy="710" r="11" opacity="0.74"/>
   </g>
-  <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff">
-    <text x="72" y="112" font-size="24" opacity="0.76">PLAYER SIGNALS</text>
-    <text x="72" y="148" font-size="13" opacity="0.42">BEHAVIOR GRAPH / BONUS ABUSE / RETENTION OPS</text>
-    <text x="72" y="1012" font-size="14" opacity="0.38">SEGMENT</text>
-    <text x="72" y="1046" font-size="26" opacity="0.72">HIGH-RISK REVIEW</text>
-    <text x="72" y="1086" font-size="13" opacity="0.42">AI GENERATES SIGNALS, HUMANS CONFIRM ACTIONS</text>
-  </g>
   <rect x="70" y="188" width="240" height="86" fill="#fff" fill-opacity="0.055" stroke="#fff" stroke-opacity="0.14"/>
   <rect x="332" y="188" width="240" height="86" fill="#fff" fill-opacity="0.035" stroke="#fff" stroke-opacity="0.12"/>
   <rect x="594" y="188" width="236" height="86" fill="#fff" fill-opacity="0.055" stroke="#fff" stroke-opacity="0.14"/>
-  <g font-family="JetBrains Mono, Consolas, monospace" fill="#fff" font-size="13">
-    <text x="94" y="226" opacity="0.56">LOGIN BURST</text>
-    <text x="356" y="226" opacity="0.56">BONUS LOOP</text>
-    <text x="618" y="226" opacity="0.56">MANUAL REVIEW</text>
-  </g>
 </svg>
