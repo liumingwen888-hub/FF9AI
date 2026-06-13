@@ -49,28 +49,18 @@ export default function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
 
     itemsRef.current.forEach((item, index) => {
       if (!item) return;
-      gsap.set(item, {
-        transformStyle: 'preserve-3d',
-        transformOrigin: '50% 0%',
-        perspective: 1000,
-        force3D: true,
-      });
 
       tl.fromTo(
         item,
         {
-          rotationX: -25,
-          rotationY: 15,
-          z: -500,
+          y: 36,
           opacity: 0,
         },
         {
-          rotationX: 0,
-          rotationY: 0,
-          z: 0,
+          y: 0,
           opacity: 1,
-          duration: 0.4,
-          ease: 'power2.out',
+          duration: 0.5,
+          ease: 'power3.out',
         },
         0.3 + index * 0.05
       );
@@ -78,34 +68,10 @@ export default function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
 
     tlRef.current = tl;
 
-    const calculateTiltFromMousePosition = (
-      element: HTMLElement,
-      mouseX: number,
-      mouseY: number,
-      intensity = 30
-    ) => {
-      const box = element.getBoundingClientRect();
-      const x = ((mouseY - box.y) - box.height / 2) / (box.height / 2) * intensity;
-      const y = (((mouseX - box.x) - box.width / 2) / (box.width / 2)) * intensity * -1;
-      return { x, y };
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!open) return;
-      itemsRef.current.forEach((item) => {
-        if (!item) return;
-        const tilt = calculateTiltFromMousePosition(item, e.clientX, e.clientY, 15);
-        item.style.transform = `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateZ(100px)`;
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       tl.kill();
     };
-  }, [open]);
+  }, []);
 
   useEffect(() => {
     const menu = menuRef.current;

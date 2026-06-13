@@ -185,15 +185,14 @@
     line-height: 1.1;
     display: block;
     cursor: pointer;
-    transition: opacity 0.2s ease;
-    transform-style: preserve-3d;
-    transform-origin: 50% 0%;
-    perspective: 1000px;
-    transform: translateZ(100px);
+    transition: opacity 0.2s ease, letter-spacing 0.2s ease;
+    transform: none;
+    will-change: transform, opacity;
   }
 
   .menu-item:hover {
     opacity: 0.6;
+    letter-spacing: 0.01em;
   }
 
   .menu-items-wrapper {
@@ -223,7 +222,7 @@
   }
 
   body.menu-open .page-container {
-    animation: slideInRight 0.8s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+    transform: none;
   }
 }
 
