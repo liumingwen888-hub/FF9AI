@@ -1,0 +1,9 @@
+---
+import SolutionPage from '../../components/layout/SolutionPage.astro';
+import { getSolution } from '../../data/solutions';
+
+const solution = getSolution('operation-signals');
+if (!solution) throw new Error('Missing operation-signals solution');
+---
+
+<SolutionPage solution={solution} />

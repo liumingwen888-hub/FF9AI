@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../components/layout/ArticleLayout.astro';
+import { entrySlug } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
+  return posts.map((post) => ({
+    params: { slug: entrySlug(post.id) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonical={`/blog/${entrySlug(post.id)}/`}
+  meta={`${post.data.category} / ${post.data.date.toISOString().slice(0, 10)}`}
+>
+  <Content />
+</ArticleLayout>

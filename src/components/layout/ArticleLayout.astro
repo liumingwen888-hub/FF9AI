@@ -1,0 +1,28 @@
+---
+import PageShell from './PageShell.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  meta?: string;
+}
+
+const { title, description, canonical, meta } = Astro.props;
+---
+
+<PageShell title={`${title} | FF9 AI`} description={description} canonical={canonical} type="article">
+  <article class="section-padding mx-auto max-w-4xl pb-24">
+    {meta && <div class="mono mb-6 text-xs uppercase tracking-[0.08em] text-[#777]">{meta}</div>}
+    <h1 class="mb-6 text-[clamp(36px,6vw,76px)] leading-[0.98] tracking-[-0.05em]">{title}</h1>
+    <p class="mb-12 max-w-2xl text-lg leading-8 text-[#666]">{description}</p>
+    <div class="prose-ff9">
+      <slot />
+    </div>
+    <div class="mt-16 border-t border-[#e5e5e5] pt-8">
+      <h2 class="mb-3 text-2xl">想判断你的流程能不能自动化？</h2>
+      <p class="mb-5 text-[#666]">把现在最耗人工的一条流程发来，我们先用脱敏样本帮你评估。</p>
+      <a href="/contact/" class="btn-primary">发一个流程让我们评估</a>
+    </div>
+  </article>
+</PageShell>

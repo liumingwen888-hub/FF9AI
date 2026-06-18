@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+      <channel>
+        <title>FF9 AI</title>
+        <description>FF9 AI 帮线上游戏与企业运营团队把风控复核、结算对账、运营信号整理等高频后台流程做成可复核的 AI 自动化系统，支持私有化部署。</description>
+        <link>https://ff9.ai</link>
+        <item>
+        <title>线上游戏后台哪些流程适合先做 AI 自动化？</title>
+        <description>从风险复核、结算对账、运营信号整理和客服质检四类流程入手，判断线上游戏后台哪些工作适合优先做 AI 自动化。</description>
+        <link>https://ff9.ai/blog/online-game-risk-review-automation/</link>
+        <guid>https://ff9.ai/blog/online-game-risk-review-automation/</guid>
+        <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+      </item><item>
+        <title>私有化部署 AI 自动化要准备哪些数据？</title>
+        <description>介绍企业在评估私有化 AI 自动化前，需要准备的脱敏样本、字段说明、人工规则和复核标准。</description>
+        <link>https://ff9.ai/blog/private-ai-automation-for-operations/</link>
+        <guid>https://ff9.ai/blog/private-ai-automation-for-operations/</guid>
+        <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+      </item><item>
+        <title>结算对账自动化如何减少人工逐笔核对？</title>
+        <description>说明线上游戏运营团队如何用 AI 自动整理订单记录、结果数据、结算流水和财务报表，减少人工逐笔核对。</description>
+        <link>https://ff9.ai/blog/settlement-reconciliation-for-online-games/</link>
+        <guid>https://ff9.ai/blog/settlement-reconciliation-for-online-games/</guid>
+        <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+      </item>
+      </channel>
+    </rss>

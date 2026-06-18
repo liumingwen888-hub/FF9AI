@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import PageShell from '../../components/layout/PageShell.astro';
+import ContentCard from '../../components/layout/ContentCard.astro';
+import { entrySlug } from '../../lib/content';
+
+const entries = (await getCollection('knowledge')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<PageShell
+  title="FF9 AI 知识库 | 私有化 AI 自动化基础"
+  description="了解私有化 AI 自动化、流程评估、数据安全和后台运营自动化的基础知识。"
+  canonical="/knowledge/"
+>
+  <section class="section-padding pb-24">
+    <div class="mb-14 max-w-4xl">
+      <div class="text-label mb-4">[ Knowledge Base ]</div>
+      <h1 class="text-[clamp(40px,7vw,96px)] leading-[0.95] tracking-[-0.06em]">AI 自动化知识库</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-[#666]">用更容易理解的方式，解释一条后台流程从评估到私有化部署的关键问题。</p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2">
+      {entries.map((entry) => (
+        <ContentCard
+          href={`/knowledge/${entrySlug(entry.id)}/`}
+          title={entry.data.title}
+          description={entry.data.description}
+          meta={entry.data.category}
+        />
+      ))}
+    </div>
+  </section>
+</PageShell>

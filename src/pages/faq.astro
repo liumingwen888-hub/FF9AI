@@ -1,0 +1,39 @@
+---
+import PageShell from '../components/layout/PageShell.astro';
+import { faqs } from '../data/faqs';
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<PageShell
+  title="FF9 AI 常见问题 | 私有化 AI 自动化 FAQ"
+  description="了解 FF9 AI 私有化部署、流程评估、数据安全、试点周期和 AI 自动化接入方式。"
+  canonical="/faq/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <section class="section-padding pb-24">
+    <div class="mb-14 max-w-4xl">
+      <div class="text-label mb-4">[ FAQ ]</div>
+      <h1 class="text-[clamp(40px,7vw,96px)] leading-[0.95] tracking-[-0.06em]">常见问题</h1>
+    </div>
+    <div class="max-w-4xl divide-y divide-[#e5e5e5]">
+      {faqs.map((faq) => (
+        <article class="py-8">
+          <h2 class="mb-3 text-2xl">{faq.question}</h2>
+          <p class="leading-8 text-[#666]">{faq.answer}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</PageShell>

@@ -1,0 +1,26 @@
+---
+import { navigation } from '../../data/navigation';
+import { site } from '../../data/site';
+---
+
+<footer class="bg-black px-[3vw] py-12 text-white">
+  <div class="grid gap-10 md:grid-cols-[1.4fr_1fr]">
+    <div>
+      <div class="mb-4 flex items-center gap-3">
+        <span class="flex h-8 w-8 items-center justify-center rounded-md bg-white text-lg font-semibold text-black">F</span>
+        <span class="text-lg font-semibold">{site.name}</span>
+      </div>
+      <p class="max-w-xl text-sm leading-7 text-white/65">
+        面向线上游戏与企业运营团队，把高频、重复、可复核的后台流程做成私有化 AI 自动化系统。
+      </p>
+    </div>
+    <nav class="grid grid-cols-2 gap-3 text-sm text-white/70">
+      {navigation.map((item) => (
+        <a href={item.href} class="transition-colors hover:text-white">{item.label}</a>
+      ))}
+    </nav>
+  </div>
+  <div class="mt-12 border-t border-white/10 pt-6 text-xs text-white/45">
+    © 2026 FF9 AI. All rights reserved.
+  </div>
+</footer>

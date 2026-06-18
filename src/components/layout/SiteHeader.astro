@@ -1,0 +1,18 @@
+---
+import { navigation } from '../../data/navigation';
+import { site } from '../../data/site';
+---
+
+<header class="fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-6 py-5 text-white mix-blend-difference">
+  <a href="/" class="flex items-center gap-3" aria-label={site.name}>
+    <span class="flex h-8 w-8 items-center justify-center rounded-md bg-white text-lg font-semibold text-black">F</span>
+    <span class="text-base font-semibold tracking-tight">{site.name}</span>
+  </a>
+  <nav class="hidden items-center gap-6 text-sm md:flex">
+    {navigation.map((item) => (
+      <a href={item.href} class="opacity-80 transition-opacity hover:opacity-100">
+        {item.label}
+      </a>
+    ))}
+  </nav>
+</header>

@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../components/layout/ArticleLayout.astro';
+import { entrySlug } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('knowledge');
+  return entries.map((entry) => ({
+    params: { slug: entrySlug(entry.id) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical={`/knowledge/${entrySlug(entry.id)}/`}
+  meta={entry.data.category}
+>
+  <Content />
+</ArticleLayout>

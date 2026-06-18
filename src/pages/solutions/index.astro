@@ -1,0 +1,31 @@
+---
+import PageShell from '../../components/layout/PageShell.astro';
+import ContentCard from '../../components/layout/ContentCard.astro';
+import { solutions } from '../../data/solutions';
+---
+
+<PageShell
+  title="FF9 AI 解决方案 | 线上游戏后台 AI 自动化"
+  description="FF9 AI 面向线上游戏后台风控复核、结算对账和运营信号整理，提供可复核、可私有化部署的 AI 自动化方案。"
+  canonical="/solutions/"
+>
+  <section class="section-padding pb-24">
+    <div class="mb-14 max-w-4xl">
+      <div class="text-label mb-4">[ Solutions ]</div>
+      <h1 class="text-[clamp(40px,7vw,96px)] leading-[0.95] tracking-[-0.06em]">从一条高频后台流程开始自动化</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-[#666]">
+        不需要一开始改造全部系统。先选择风险复核、结算对账或运营信号整理中的一条流程，用脱敏样本验证效果。
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {solutions.map((solution) => (
+        <ContentCard
+          href={`/solutions/${solution.slug}/`}
+          title={solution.title}
+          description={solution.description}
+          meta={solution.eyebrow}
+        />
+      ))}
+    </div>
+  </section>
+</PageShell>

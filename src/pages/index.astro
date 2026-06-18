@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Homepage from '../components/islands/Homepage';
+import { site } from '../data/site';
+---
+
+<BaseLayout title={site.title} description={site.description} canonical="/">
+  <Homepage client:load />
+</BaseLayout>

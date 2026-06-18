@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#000"/>
+  <circle cx="910" cy="180" r="210" fill="#1d1d1d"/>
+  <circle cx="320" cy="470" r="160" fill="#151515"/>
+  <path d="M100 430C260 250 410 560 610 350S910 220 1080 330" fill="none" stroke="#fff" stroke-opacity=".32" stroke-width="3"/>
+  <rect x="88" y="78" width="72" height="72" rx="16" fill="#fff"/>
+  <text x="112" y="128" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#000">F</text>
+  <text x="184" y="128" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#fff">FF9 AI</text>
+  <text x="88" y="300" font-family="Arial, sans-serif" font-size="78" font-weight="700" fill="#fff">AI 自动化流程</text>
+  <text x="88" y="382" font-family="Arial, sans-serif" font-size="38" fill="#aaa">私有化部署 · 风险复核 · 结算对账 · 运营信号</text>
+</svg>

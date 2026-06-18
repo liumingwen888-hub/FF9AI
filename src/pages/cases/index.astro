@@ -1,0 +1,28 @@
+---
+import PageShell from '../../components/layout/PageShell.astro';
+import { solutions } from '../../data/solutions';
+---
+
+<PageShell
+  title="FF9 AI 案例 | 线上游戏后台自动化场景"
+  description="查看 FF9 AI 在线上游戏后台风险复核、结算对账和运营信号整理中的 AI 自动化案例方向。"
+  canonical="/cases/"
+>
+  <section class="section-padding pb-24">
+    <div class="mb-14 max-w-4xl">
+      <div class="text-label mb-4">[ Cases ]</div>
+      <h1 class="text-[clamp(40px,7vw,96px)] leading-[0.95] tracking-[-0.06em]">从后台高频流程切入</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-[#666]">先让 AI 处理重复判断、证据整理和异常清单，再由负责人完成关键复核。</p>
+    </div>
+    <div class="grid gap-px bg-[#e5e5e5] md:grid-cols-3">
+      {solutions.map((solution) => (
+        <article class="bg-white p-8">
+          <div class="text-label mb-5">{solution.eyebrow}</div>
+          <h2 class="mb-4 text-2xl">{solution.title}</h2>
+          <p class="mb-6 text-sm leading-7 text-[#666]">{solution.description}</p>
+          <a href={`/solutions/${solution.slug}/`} class="text-sm font-medium">查看方案 →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</PageShell>
